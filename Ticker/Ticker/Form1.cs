@@ -38,9 +38,14 @@ namespace Ticker
                     double.Parse(textBox2.Text)
 
                 );
+                if(textBox4.Text.Length == 0)
+                {
+                    throw new Exception("Empty String Game");
+                }
                 inv.Save();
+                dataGridView1.DataSource = Inventory.getAllEnvs();
             }
-            catch(FormatException ex)
+            catch(Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
