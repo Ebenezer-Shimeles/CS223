@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
+
+
 
 namespace Ticker
 {
@@ -27,8 +30,10 @@ namespace Ticker
 
         private void button1_Click(object sender, EventArgs e)
         {
+
             try
             {
+
                 var inv = new Inventory(
                     int.Parse(textBox1.Text),
                     dateTimePicker1.Value,
@@ -38,9 +43,24 @@ namespace Ticker
                     double.Parse(textBox2.Text)
 
                 );
+
+                var inventoryPattren = new Regex(@"[0-9]{3}");
+                //must be three digits
+                var objectNamePattern = new Regex(@"[A-Z]{1}[a-z]+");
+                //must begin with a capital letter and all others must be smalle
+
                 if(textBox4.Text.Length == 0)
                 {
                     throw new Exception("Empty String Game");
+                }
+                if (!inventoryPattren.IsMatch(textBox3.Text))
+                {
+                    throw new Exception("Error in inventory");
+                }
+                if (!objectNamePattern.IsMatch(textBox4.Text))
+                {
+                    throw new Exception("Object Name Should Start " +
+                        "with Capital letter and the rest should be small letter");
                 }
                 inv.Save();
                 dataGridView1.DataSource = Inventory.getAllEnvs();
