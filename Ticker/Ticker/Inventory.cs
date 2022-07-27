@@ -22,15 +22,16 @@ namespace Ticker
             _price = p;
             _count = c;
             objectName = o;
-            _invs.Add(this);
-            foreach(Inventory inventory in _invs)
-            {
-                Console.WriteLine(inventory);
-            }
+           
         }
         public void Save()
         {
             Console.Write($"Saving {this}");
+             _invs.Add(this);
+            foreach(Inventory inventory in _invs)
+            {
+                Console.WriteLine(inventory);
+            }
         }
         public override string ToString()
         {
@@ -38,7 +39,7 @@ namespace Ticker
         }
 
 
-        public List<Inventory> getAllEnvs()
+        public static List<Inventory> getAllEnvs()
         {
             return _invs;
         }

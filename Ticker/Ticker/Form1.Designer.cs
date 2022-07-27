@@ -50,7 +50,7 @@
             // 
             // AddButton
             // 
-            this.AddButton.Location = new System.Drawing.Point(118, 362);
+            this.AddButton.Location = new System.Drawing.Point(126, 329);
             this.AddButton.Name = "AddButton";
             this.AddButton.Size = new System.Drawing.Size(75, 23);
             this.AddButton.TabIndex = 0;
@@ -60,7 +60,7 @@
             // 
             // Cancel
             // 
-            this.Cancel.Location = new System.Drawing.Point(420, 362);
+            this.Cancel.Location = new System.Drawing.Point(386, 329);
             this.Cancel.Name = "Cancel";
             this.Cancel.Size = new System.Drawing.Size(75, 23);
             this.Cancel.TabIndex = 1;
@@ -183,7 +183,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(963, 546);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.Date);
             this.Controls.Add(this.Count);
