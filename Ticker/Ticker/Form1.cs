@@ -49,13 +49,16 @@ namespace Ticker
                 var objectNamePattern = new Regex(@"[A-Z]{1}[a-z]+");
                 //must begin with a capital letter and all others must be smalle
 
-                if(textBox4.Text.Length == 0)
+                if (textBox4.Text.Length == 0)
                 {
-                    throw new Exception("Empty String Game");
+                    errorProvider1.SetError(textBox4, "Error This must not be empty");
+                    
+                    //throw new Exception("Empty String Game");
                 }
+                else errorProvider1.Clear();
                 if (!inventoryPattren.IsMatch(textBox3.Text))
                 {
-                    throw new Exception("Error in inventory");
+                    throw new Exception("Error in inventory format");
                 }
                 if (!objectNamePattern.IsMatch(textBox4.Text))
                 {
