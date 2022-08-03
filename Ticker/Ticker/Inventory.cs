@@ -15,14 +15,22 @@ namespace Ticker
         private int _count;
         private double _price;
         private static List<Inventory> _invs = new List<Inventory>();
-        internal Inventory(int n, DateTime d, int invN, string o, int c, double p) {
+        private  bool _isAvailable;
+        internal Inventory(int n, 
+            DateTime d, int invN, string o, int c, double p, bool i) {
             _number = n;
             _date = d;
             inventoryNumber= invN;
             _price = p;
             _count = c;
             objectName = o;
+            _isAvailable = i;
            
+        }
+        public bool IsAvailable
+        {
+            get { return _isAvailable; }
+            set { _isAvailable = value; }
         }
         public void Save()
         {

@@ -40,9 +40,10 @@ namespace Ticker
                     int.Parse(textBox3.Text),
                     textBox4.Text,
                     int.Parse(textBox5.Text),
-                    double.Parse(textBox2.Text)
-
+                    double.Parse(textBox2.Text),
+                    checkBox1.Checked
                 );
+              
 
                 var inventoryPattren = new Regex(@"[0-9]{3}");
                 //must be three digits
@@ -116,6 +117,11 @@ namespace Ticker
                 return;
             }
             textBox2.Text = Convert.ToString(Double.Parse(textBox2.Text) + 1);
+
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
 
         }
     }
